@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Harmonic by es6rocks</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Harmonic</h1>
+        <h2>The next static site generator</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/es6rocks/harmonic/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/es6rocks/harmonic/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/es6rocks/harmonic" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p><img src="https://raw.githubusercontent.com/es6rocks/harmonic/master/harmonic-logo.png" alt="harmonic logo">   </p>
+
+<h1>
+<a name="the-next-static-site-generator" class="anchor" href="#the-next-static-site-generator"><span class="octicon octicon-link"></span></a>The next static site generator</h1>
+
+<blockquote>
+<p>Please note that this project is currently under development. Contributions are pretty welcome!</p>
+</blockquote>
+
+<p>Harmonic is being developed with some goals:  </p>
+
+<ul>
+<li>Learn and play with ES6 (in node and the browser)</li>
+<li>Build a simple static site generator in node using ES6 features</li>
+<li>Create the ES6 Rocks website with Harmonic! (Actually, the website is already online <a href="http://es6rocks.com">ES6Rocks</a>)<br>
+</li>
+</ul>
+
+<p>Check out the full documentation in Harmonic's Wiki: <a href="https://github.com/es6rocks/harmonic/wiki/">https://github.com/es6rocks/harmonic/wiki/</a></p>
+
+<h2>
+<a name="installing" class="anchor" href="#installing"><span class="octicon octicon-link"></span></a>Installing</h2>
+
+<p><strong>Attention:</strong><br>
+Harmonic uses some ES6 features. You'll need to instal node 0.11.* version.<br>
+<a href="https://github.com/creationix/nvm">NVM</a> or <a href="https://github.com/visionmedia/n">n</a> is a good approach to have multiple node versions and do not break any existent node software that you already have installed.  </p>
+
+<p>Harmonic is avaiable on npm:  </p>
+
+<pre lang="shell"><code>npm install harmonic -g
+</code></pre>
+
+<p>For more details, check out the full documentation: <a href="https://github.com/es6rocks/harmonic/wiki/Installing">Installing</a></p>
+
+<h2>
+<a name="init" class="anchor" href="#init"><span class="octicon octicon-link"></span></a>Init</h2>
+
+<p>First thing you'll need to do is initialize a new Harmonic website.<br>
+Simply:  </p>
+
+<pre lang="shell"><code>harmonic init [PATH]
+</code></pre>
+
+<p>[PATH] is your website dir. The default path is the current dir.<br>
+Harmonic will prompt you asking for some data about your website:<br>
+<img src="https://raw.githubusercontent.com/wiki/es6rocks/harmonic/img/config.png" alt="Config">  </p>
+
+<p>The Harmonic config file is a simple JSON object.<br>
+Any time you want, you can configure your static website with the CLI <em>config</em> command:  </p>
+
+<pre lang="shell"><code>cd [PATH]
+harmonic config
+</code></pre>
+
+<p>Now, enter in your website dir and start creating posts, etc.<br>
+For more details, check out the full documentation: <a href="https://github.com/es6rocks/harmonic/wiki/Config/">Config</a></p>
+
+<h2>
+<a name="blogging" class="anchor" href="#blogging"><span class="octicon octicon-link"></span></a>Blogging</h2>
+
+<p>Harmonic follow the pattern of others static site generators you may know.<br>
+You must write your posts in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> format.  </p>
+
+<h3>
+<a name="new-post" class="anchor" href="#new-post"><span class="octicon octicon-link"></span></a>New post:</h3>
+
+<pre><code>cd your_awesome_website
+harmonic new_post "Hello World"
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/wiki/es6rocks/harmonic/img/new_post.png" alt="New Post"></p>
+
+<p>After running <strong><em>new_post</em></strong>, the markdown file will be generated in <em><strong>/src/posts/[lang]</strong></em> folder.  </p>
+
+<h4>
+<a name="markdown-header" class="anchor" href="#markdown-header"><span class="octicon octicon-link"></span></a>Markdown header</h4>
+
+<p>The markdown file have a header which defines the post meta-data.<br>
+Example:  </p>
+
+<pre lang="markdown"><code>&lt;!--
+layout: post
+title: hello world
+date: 2014-05-17T08:18:47.847Z
+comments: true
+published: true
+keywords: JavaScript, ES6
+description: Hello world post
+categories: JavaScript, ES6
+authorName: Jaydson
+--&gt;
+</code></pre>
+
+<p>You can check all possible header values in the <a href="https://github.com/es6rocks/harmonic/wiki/markdown-header">header page</a>.  </p>
+
+<h4>
+<a name="markdown-content" class="anchor" href="#markdown-content"><span class="octicon octicon-link"></span></a>Markdown content</h4>
+
+<p>Everything after the header is the post content.<br>
+Exemple:  </p>
+
+<pre lang="markdown"><code># Hello World  
+This is my awesome post using [harmonic](https://github.com/es6rocks/harmonic).  
+
+This is a list:  
+- Item 1
+- Item 2
+- Item 3
+</code></pre>
+
+<p>The code above will be parsed to something like this:  </p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"hello-world"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  This is my awesome post using 
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/es6rocks/harmonic"</span><span class="nt">&gt;</span>harmonic<span class="nt">&lt;/a&gt;</span>.
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>This is a list:  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;</span>Item 1<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>Item 2<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>Item 3<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+
+<p>For more details, you can check the full documentation: <a href="https://github.com/es6rocks/harmonic/wiki/Blogging">Blogging</a>.  </p>
+
+<h2>
+<a name="new-page" class="anchor" href="#new-page"><span class="octicon octicon-link"></span></a>New Page</h2>
+
+<pre><code>cd your_awesome_website
+harmonic new_page "Hello World Page"
+</code></pre>
+
+<p>After running <strong><em>new_page</em></strong>, the markdown file will be generated in <em><strong>/src/pages/[lang]</strong></em> folder.  </p>
+
+<h2>
+<a name="build" class="anchor" href="#build"><span class="octicon octicon-link"></span></a>Build</h2>
+
+<p>The build tool will generate the index page, posts, pages, categories, compile styles and ES6.</p>
+
+<pre lang="shell"><code>harmonic build
+</code></pre>
+
+<h2>
+<a name="run" class="anchor" href="#run"><span class="octicon octicon-link"></span></a>Run</h2>
+
+<p>To run your static server:</p>
+
+<pre lang="shell"><code>harmonic run
+</code></pre>
+
+<p>You can specify an port, by default Harmonic will use the 9356 port:</p>
+
+<pre lang="shell"><code>harmonic run 9090
+</code></pre>
+
+<h2>
+<a name="help" class="anchor" href="#help"><span class="octicon octicon-link"></span></a>Help</h2>
+
+<pre lang="shell"><code>harmonic --help
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
